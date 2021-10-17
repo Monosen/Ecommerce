@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 
 //context
@@ -15,8 +16,10 @@ import { RiShoppingCart2Fill } from "react-icons/ri";
 const Nabar = () => {
 	const [Hamburger, setHamburger] = useState(false);
 	const [Cart, setCart] = useState(false);
+	const { code } = useParams();
 
-	const { cartList } = useContext(ShoppingCartContext);
+	const { cartList, handleValueMax, handleTotal } =
+		useContext(ShoppingCartContext);
 
 	const clickHamburger = () => {
 		setHamburger(!Hamburger);
@@ -24,6 +27,10 @@ const Nabar = () => {
 
 	const clickCart = () => {
 		setCart(!Cart);
+		if (Cart === false) {
+			handleValueMax(parseInt(code));
+			console.log(handleTotal());
+		}
 	};
 
 	return (
@@ -112,9 +119,13 @@ const Nabar = () => {
 										img={product.img}
 										name={product.name}
 										costo={product.costo}
+										unidad={product.unidad}
+										id={product.id}
+										max={product.max}
 									/>
 								))}
 							</div>
+							<p>valor Total: ${handleTotal()}</p>
 						</div>
 					</>
 				)}

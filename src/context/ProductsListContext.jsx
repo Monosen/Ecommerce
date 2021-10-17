@@ -4,7 +4,7 @@ import { productsList } from "../helpers/productsList";
 const ProductsListContext = createContext();
 
 const ProductsListProvider = ({ children }) => {
-	const [list, setList] = useState(productsList);
+	const [list] = useState(productsList);
 
 	const data = { list };
 

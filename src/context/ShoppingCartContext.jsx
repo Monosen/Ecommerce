@@ -6,6 +6,7 @@ const cart = [];
 
 const ShoppingCartProvider = ({ children }) => {
 	const [cartList, setCartList] = useState(cart);
+
 	const handleAddCartList = (id, name, img, costo, state) => {
 		const result = cartList.some((product) => product.id === id);
 		if (result) {
@@ -13,7 +14,15 @@ const ShoppingCartProvider = ({ children }) => {
 		} else {
 			setCartList([
 				...cartList,
-				{ id: id, name: name, img: img, costo: costo, state: state, unidad: 1 },
+				{
+					id: id,
+					name: name,
+					img: img,
+					costo: costo,
+					state: state,
+					unidad: 1,
+					max: 0,
+				},
 			]);
 		}
 	};
@@ -27,11 +36,36 @@ const ShoppingCartProvider = ({ children }) => {
 		);
 	};
 
-	const handleRemoveCartItem = (id) => {
-		alert(id);
+	const handleValueMax = (id) => {
+		setCartList(
+			cartList.map((items) => {
+				if (items.id === id) {
+					items.max = Number(items.costo.replace("$", "")) * items.unidad;
+				}
+				return items;
+			})
+		);
 	};
 
-	const cartData = { cartList, handleAddCartList, handleRemoveCartItem };
+	const handleTotal = () => {
+		let result = 0;
+		cartList.forEach((value) => {
+			result += value.max;
+		});
+		return result;
+	};
+
+	const handleRemoveCartItem = (id) => {
+		setCartList(cartList.filter((value) => value.id !== id));
+	};
+
+	const cartData = {
+		cartList,
+		handleAddCartList,
+		handleRemoveCartItem,
+		handleValueMax,
+		handleTotal,
+	};
 
 	console.log(cartList);
 	return (
