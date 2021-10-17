@@ -10,7 +10,6 @@ import ProductsListContext from "../../context/ProductsListContext";
 const Products = () => {
 	const { list } = useContext(ProductsListContext);
 
-	console.log(list);
 	return (
 		<div>
 			<Nabar />

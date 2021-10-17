@@ -29,7 +29,7 @@ const Nabar = () => {
 		setCart(!Cart);
 		if (Cart === false) {
 			handleValueMax(parseInt(code));
-			console.log(handleTotal());
+			// console.log(handleTotal());
 		}
 	};
 
