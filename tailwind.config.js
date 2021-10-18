@@ -36,6 +36,7 @@ module.exports = {
 			black: "#000000",
 			white: "#ffffff",
 			green: "#29c747",
+			greenTwo: "#04891B",
 			blue: "#19B1FF",
 		},
 		textColor: {
@@ -43,6 +44,11 @@ module.exports = {
 			black: "#000000",
 			white: "#ffffff",
 		},
+		// fill: (theme) => ({
+		// 	red: theme("#19B1FF"),
+		// 	green: theme("colors.green.500"),
+		// 	blue: theme("colors.blue.500"),
+		// }),
 		// fontFamily: {
 		// 	sans2: [
 		// 		"Calibre",
@@ -68,7 +74,9 @@ module.exports = {
 		},
 	},
 	variants: {
-		extend: {},
+		extend: {
+			backgroundColor: ["active"],
+		},
 	},
 	plugins: [],
 };

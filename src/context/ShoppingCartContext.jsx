@@ -77,7 +77,6 @@ const ShoppingCartProvider = ({ children }) => {
 		handleTotal,
 	};
 
-	console.log(cartList);
 	return (
 		<ShoppingCartContext.Provider value={cartData}>
 			{children}

@@ -121,8 +121,17 @@ const Nabar = () => {
 										max={product.max}
 									/>
 								))}
+								<div className="flex justify-between">
+									<p className="font-semibold">TOTAL (Incl. VAT) </p>
+									<span className="font-semibold">${handleTotal()}</span>
+								</div>
+								<button className="bg-green w-full text-white py-4 rounded text-2xl font-extrabold uppercase mb-1.5 hover:bg-greenTwo">
+									Checkout
+								</button>
+								<button className="bg-green w-full text-white py-4 rounded text-2xl font-extrabold uppercase">
+									Checkout
+								</button>
 							</div>
-							<p>valor Total: ${handleTotal()}</p>
 						</div>
 					</>
 				)}

@@ -74,7 +74,7 @@ const SingleProductDetails = ({ img, name, costo, id, state }) => {
 				</div>
 				<button
 					onClick={() => handleAddCartList(id, name, img, costo, state)}
-					className="uppercase w-full h-16 hover:bg-blue rounded bg-green text-white"
+					className="uppercase w-full h-16 hover:bg-greenTwo rounded bg-green text-white text-2xl font-bold mb-4"
 				>
 					add to cart
 				</button>
