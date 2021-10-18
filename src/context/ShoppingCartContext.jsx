@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
 
 const ShoppingCartContext = createContext();
 
@@ -36,12 +36,10 @@ const ShoppingCartProvider = ({ children }) => {
 		);
 	};
 
-	const handleValueMax = (id) => {
+	const handleValueMax = () => {
 		setCartList(
 			cartList.map((items) => {
-				if (items.id === id) {
-					items.max = Number(items.costo.replace("$", "")) * items.unidad;
-				}
+				items.max = Number(items.costo.replace("$", "")) * items.unidad;
 				return items;
 			})
 		);
@@ -59,6 +57,18 @@ const ShoppingCartProvider = ({ children }) => {
 		setCartList(cartList.filter((value) => value.id !== id));
 	};
 
+	useEffect(() => {
+		if (JSON.parse(localStorage.getItem("cartList"))) {
+			setCartList(JSON.parse(localStorage.getItem("cartList")));
+		} else {
+			setCartList(localStorage.setItem("cartList", JSON.stringify([])));
+		}
+	}, []);
+
+	useEffect(() => {
+		localStorage.setItem("cartList", JSON.stringify(cartList));
+	}, [cartList]);
+
 	const cartData = {
 		cartList,
 		handleAddCartList,
@@ -67,6 +77,7 @@ const ShoppingCartProvider = ({ children }) => {
 		handleTotal,
 	};
 
+	console.log(cartList);
 	return (
 		<ShoppingCartContext.Provider value={cartData}>
 			{children}

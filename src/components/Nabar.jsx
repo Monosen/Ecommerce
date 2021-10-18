@@ -1,5 +1,4 @@
 import React, { useState, useContext } from "react";
-import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 
 //context
@@ -16,7 +15,6 @@ import { RiShoppingCart2Fill } from "react-icons/ri";
 const Nabar = () => {
 	const [Hamburger, setHamburger] = useState(false);
 	const [Cart, setCart] = useState(false);
-	const { code } = useParams();
 
 	const { cartList, handleValueMax, handleTotal } =
 		useContext(ShoppingCartContext);
@@ -28,8 +26,7 @@ const Nabar = () => {
 	const clickCart = () => {
 		setCart(!Cart);
 		if (Cart === false) {
-			handleValueMax(parseInt(code));
-			// console.log(handleTotal());
+			handleValueMax();
 		}
 	};
 
