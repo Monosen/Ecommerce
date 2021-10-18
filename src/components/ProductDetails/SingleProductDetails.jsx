@@ -3,6 +3,9 @@ import React, { useContext } from "react";
 //Context
 import ShoppingCartContext from "../../context/ShoppingCartContext";
 
+//Styles
+import "./SingleProductDetails.css";
+
 const SingleProductDetails = ({ img, name, costo, id, state }) => {
 	const { handleAddCartList } = useContext(ShoppingCartContext);
 	return (
@@ -20,14 +23,18 @@ const SingleProductDetails = ({ img, name, costo, id, state }) => {
 				</div>
 				<div className="flex items-center mb-3">
 					<p className="font-semibold">Fit</p>
-					<div className="flex text-center ml-7 w-full">
-						<label className="m-1 px-2 py-2 border border-black-500 cursor-pointer w-6/12">
+					<div id="gender" className="flex text-center ml-7 w-full text-blue">
+						<label className="m-1 px-2 py-5 border border-black cursor-pointer w-6/12 relative rounded">
 							<input className="hidden" type="radio" name="genero" />
-							<span>Male Fit</span>
+							<span className="absolute inset-0 flex justify-center items-center">
+								Male Fit
+							</span>
 						</label>
-						<label className="m-1 px-2 py-2 border border-black-500 cursor-pointer w-6/12">
+						<label className="m-1 px-2 py-2 border border-black-500 cursor-pointer w-6/12 relative rounded">
 							<input className="hidden" type="radio" name="genero" />
-							<span>Female Fit</span>
+							<span className="absolute inset-0 flex justify-center items-center">
+								Female Fit
+							</span>
 						</label>
 					</div>
 				</div>

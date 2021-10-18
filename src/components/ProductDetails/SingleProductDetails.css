@@ -1,0 +1,5 @@
+#gender label input:checked ~ span {
+	background-color: #19b1ff;
+	color: white;
+	font-weight: 700;
+}

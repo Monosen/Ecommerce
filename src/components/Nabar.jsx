@@ -109,28 +109,32 @@ const Nabar = () => {
 							onClick={clickCart}
 						></button>
 						<div className="text-black h-screen w-4/5 right-0 top-0 bottom-0 absolute z-20 flex flex-col bg-white">
-							<div className="px-5 py-6">
-								{cartList.map((product) => (
-									<SingleProductCard
-										key={product.id}
-										img={product.img}
-										name={product.name}
-										costo={product.costo}
-										unidad={product.unidad}
-										id={product.id}
-										max={product.max}
-									/>
-								))}
-								<div className="flex justify-between">
-									<p className="font-semibold">TOTAL (Incl. VAT) </p>
-									<span className="font-semibold">${handleTotal()}</span>
+							<div className="flex flex-col h-full justify-between">
+								<div className="overflow-auto px-5 py-6">
+									{cartList.map((product) => (
+										<SingleProductCard
+											key={product.id}
+											img={product.img}
+											name={product.name}
+											costo={product.costo}
+											unidad={product.unidad}
+											id={product.id}
+											max={product.max}
+										/>
+									))}
 								</div>
-								<button className="bg-green w-full text-white py-4 rounded text-2xl font-extrabold uppercase mb-1.5 hover:bg-greenTwo">
-									Checkout
-								</button>
-								<button className="bg-green w-full text-white py-4 rounded text-2xl font-extrabold uppercase">
-									Checkout
-								</button>
+								<div className="pt-4 mt-3 bg-gray px-5 py-6">
+									<div className="flex justify-between">
+										<p className="font-semibold">TOTAL (Incl. VAT) </p>
+										<span className="font-semibold">${handleTotal()}</span>
+									</div>
+									<button className="bg-green w-full text-white py-4 rounded text-2xl font-extrabold uppercase mb-1.5 hover:bg-greenTwo">
+										Checkout
+									</button>
+									<button className="bg-green w-full text-white py-4 rounded text-2xl font-extrabold uppercase">
+										Checkout
+									</button>
+								</div>
 							</div>
 						</div>
 					</>
