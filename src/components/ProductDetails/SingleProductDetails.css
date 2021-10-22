@@ -1,4 +1,5 @@
-#gender label input:checked ~ span {
+#gender label input:checked ~ span,
+#size label input:checked ~ span {
 	background-color: #19b1ff;
 	color: white;
 	font-weight: 700;

@@ -24,13 +24,13 @@ const SingleProductDetails = ({ img, name, costo, id, state }) => {
 				<div className="flex items-center mb-3">
 					<p className="font-semibold">Fit</p>
 					<div id="gender" className="flex text-center ml-7 w-full text-blue">
-						<label className="m-1 px-2 py-5 border border-black cursor-pointer w-6/12 relative rounded">
+						<label className="m-1 px-2 py-5 border border-grayTwo cursor-pointer w-6/12 relative rounded">
 							<input className="hidden" type="radio" name="genero" />
 							<span className="absolute inset-0 flex justify-center items-center">
 								Male Fit
 							</span>
 						</label>
-						<label className="m-1 px-2 py-2 border border-black-500 cursor-pointer w-6/12 relative rounded">
+						<label className="m-1 px-2 py-2 border border-grayTwo cursor-pointer w-6/12 relative rounded">
 							<input className="hidden" type="radio" name="genero" />
 							<span className="absolute inset-0 flex justify-center items-center">
 								Female Fit
@@ -38,40 +38,59 @@ const SingleProductDetails = ({ img, name, costo, id, state }) => {
 						</label>
 					</div>
 				</div>
-				<div className="flex items-center mb-10">
+				<div className="flex items-center mb-10 ">
 					<p className="font-semibold">Size</p>
-					<div className="grid grid-cols-4 text-center ml-5 gap-2 w-full">
-						<label className="m-1 px-4 py-2 border border-black-500 cursor-pointer">
+					<div
+						id="size"
+						className="grid grid-cols-4 text-center ml-5 gap-2 w-full text-blue"
+					>
+						<label className="m-1 px-4 py-4 border border-grayTwo cursor-pointer rounded relative z-0">
 							<input className="hidden" type="radio" name="size" />
-							<span>S</span>
+							<span className="absolute inset-0 flex justify-center items-center">
+								S
+							</span>
 						</label>
-						<label className="m-1 px-4 py-2 border border-black-500 cursor-pointer">
+						<label className="m-1 px-4 py-4 border border-grayTwo cursor-pointer rounded relative z-0">
 							<input className="hidden" type="radio" name="size" />
-							<span>M</span>
+							<span className="absolute inset-0 flex justify-center items-center">
+								M
+							</span>
 						</label>
-						<label className="m-1 px-4 py-2 border border-black-500 cursor-pointer ">
+						<label className="m-1 px-4 py-4 border border-grayTwo cursor-pointer rounded relative z-0 ">
 							<input className="hidden" type="radio" name="size" />
-							<span>L</span>
+							<span className="absolute inset-0 flex justify-center items-center">
+								L
+							</span>
 						</label>
-						<label className="m-1 px-4 py-2 border border-black-500 cursor-pointer">
+						<label className="m-1 px-4 py-4 border border-grayTwo cursor-pointer rounded relative z-0">
 							<input className="hidden" type="radio" name="size" />
-							<span>XL</span>
+							<span className="absolute inset-0 flex justify-center items-center">
+								XL
+							</span>
 						</label>
-						<label className="m-1 px-4 py-2 border border-black-500 cursor-pointer">
+						<label className="m-1 px-4 py-4 border border-grayTwo cursor-pointer rounded relative z-0">
 							<input className="hidden" type="radio" name="size" />
-							<span>2XL</span>
+							<span className="absolute inset-0 flex justify-center items-center">
+								2XL
+							</span>
 						</label>
-						<label className="m-1 px-4 py-2 border border-black-500 cursor-pointer">
+						<label className="m-1 px-4 py-4 border border-grayTwo cursor-pointer rounded relative z-0">
 							<input className="hidden" type="radio" name="size" />
-							<span>3XL</span>
+							<span className="absolute inset-0 flex justify-center items-center">
+								3XL
+							</span>
 						</label>
-						<label className="m-1 px-4 py-2 border border-black-500 cursor-pointer">
+						<label className="m-1 px-4 py-4 border border-grayTwo cursor-pointer rounded relative z-0">
 							<input className="hidden" type="radio" name="size" />
-							<span>4XL</span>
+							<span className="absolute inset-0 flex justify-center items-center">
+								4XL
+							</span>
 						</label>
-						<label className="m-1 px-4 py-2 border border-black-500 cursor-pointer">
+						<label className="m-1 px-4 py-4 border border-grayTwo cursor-pointer rounded relative z-0">
 							<input className="hidden" type="radio" name="size" />
-							<span>5XL</span>
+							<span className="absolute inset-0 flex justify-center items-center">
+								5XL
+							</span>
 						</label>
 					</div>
 				</div>

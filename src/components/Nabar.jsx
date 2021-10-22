@@ -31,7 +31,7 @@ const Nabar = () => {
 	};
 
 	return (
-		<nav className="w-full fixed bg-black text-white">
+		<nav className="w-full fixed bg-black text-white z-50">
 			<div className="container mx-auto">
 				<div className="flex justify-between items-center my-3.5">
 					<div className="inline-flex lg:hidden">
@@ -105,10 +105,10 @@ const Nabar = () => {
 				{Cart && (
 					<>
 						<button
-							className="absolute z-30 top-0 left-0 w-1/5 h-screen bg-black bg-opacity-25 cursor-default"
+							className="absolute z-50 top-0 left-0 w-1/5 h-screen bg-black bg-opacity-25 cursor-default"
 							onClick={clickCart}
 						></button>
-						<div className="text-black h-screen w-4/5 right-0 top-0 bottom-0 absolute z-20 flex flex-col bg-white">
+						<div className="text-black h-screen w-4/5 right-0 top-0 bottom-0 absolute z-50 flex flex-col bg-white">
 							<div className="flex flex-col h-full justify-between">
 								<div className="overflow-auto px-5 py-6">
 									{cartList.map((product) => (

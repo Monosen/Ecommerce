@@ -21,7 +21,7 @@ const SingleProductCard = ({ img, name, costo, unidad, id, max }) => {
 				</div>
 			</div>
 			<button onClick={() => handleRemoveCartItem(id)}>
-				<IoMdClose className="w-7 h-7 fill-current text-blue" />
+				<IoMdClose className="w-7 h-7 hover:text-red" />
 			</button>
 		</div>
 	);

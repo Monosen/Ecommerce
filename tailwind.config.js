@@ -39,12 +39,14 @@ module.exports = {
 			greenTwo: "#04891B",
 			blue: "#19B1FF",
 			gray: "#F8F8F8",
+			grayTwo: "#D1D5DB",
 		},
 		textColor: {
 			green: "#29c747",
 			black: "#000000",
 			white: "#ffffff",
 			blue: "#19B1FF",
+			red: "#FE5F5A",
 		},
 		// fill: (theme) => ({
 		// 	red: theme("#19B1FF"),
