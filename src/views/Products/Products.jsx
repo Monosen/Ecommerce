@@ -7,6 +7,9 @@ import SingleProduct from "../../components/Products/SingleProduct";
 //Context
 import StoreContext from "../../context/StoreContext";
 
+//Styles
+import "./Products.styles.css";
+
 const Products = () => {
 	const { state, dispatch } = useContext(StoreContext);
 
@@ -24,9 +27,9 @@ const Products = () => {
 	}, [dispatch]);
 
 	return (
-		<div>
+		<>
 			<Nabar />
-			<div className="pt-40 grid grid-cols-2 lg:grid-cols-3 gap-5 justify-items-center">
+			<div className="box-products pt-40 grid grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-7 justify-items-center mx-auto">
 				{state?.list?.length > 0 &&
 					state.list.map((product) => (
 						<SingleProduct
@@ -38,7 +41,7 @@ const Products = () => {
 						/>
 					))}
 			</div>
-		</div>
+		</>
 	);
 };
 
