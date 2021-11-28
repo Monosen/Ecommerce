@@ -40,6 +40,8 @@ module.exports = {
 			blue: "#19B1FF",
 			gray: "#F8F8F8",
 			grayTwo: "#D1D5DB",
+			grayThree: "#8a8a8a",
+			red: "#DC3545",
 		},
 		textColor: {
 			green: "#29c747",

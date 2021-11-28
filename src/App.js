@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 
 //Views
@@ -6,33 +6,24 @@ import Home from "./views/Home/Home";
 import Page404 from "./views/404/Page404";
 import Products from "./views/Products/Products";
 import ProductDetails from "./views/ProductDetails/ProductDetails";
+import Checkout from "./views/Checkout/Checkout";
 
 //Context
-import { ProductsListProvider } from "./context/ProductsListContext";
-import { ShoppingCartProvider } from "./context/ShoppingCartContext";
+import { StoreProvider } from "./context/StoreContext";
 
 function App() {
 	return (
-		<ShoppingCartProvider>
-			<ProductsListProvider>
-				<Router>
-					<Switch>
-						<Route path="/" exact>
-							<Home />
-						</Route>
-						<Route path="/products" exact>
-							<Products />
-						</Route>
-						<Route path="/products/:code" exact>
-							<ProductDetails />
-						</Route>
-						<Route path="*">
-							<Page404 />
-						</Route>
-					</Switch>
-				</Router>
-			</ProductsListProvider>
-		</ShoppingCartProvider>
+		<StoreProvider>
+			<Router>
+				<Routes>
+					<Route path="/" element={<Home />} />
+					<Route path="/products" element={<Products />} />
+					<Route path="/checkout" element={<Checkout />} />
+					<Route path="/products/:code" element={<ProductDetails />} />
+					<Route path="*" element={<Page404 />} />
+				</Routes>
+			</Router>
+		</StoreProvider>
 	);
 }
 

@@ -4,26 +4,24 @@ import React, { useContext } from "react";
 import { IoMdClose } from "react-icons/io";
 
 //context
-import ShoppingCartContext from "../../context/ShoppingCartContext";
+import StoreContext from "../../context/StoreContext";
 
-const SingleProductCard = ({ img, name, costo, unidad, id, max }) => {
-	const { handleRemoveCartItem } = useContext(ShoppingCartContext);
-
+const SingleProductCard = ({ img, name, price, unidad, id, max }) => {
+	const { dispatch } = useContext(StoreContext);
 	return (
-		<div className="flex mb-4 justify-between">
-			<div className="inline-flex">
-				<img className="w-1/5" src={img} alt={name} />
-				<div>
-					<h4>{name}</h4>
-					<p>{costo}</p>
-					<p>Quantity: {unidad}</p>
-					<p>{max}</p>
-				</div>
-			</div>
-			<button onClick={() => handleRemoveCartItem(id)}>
-				<IoMdClose className="w-7 h-7 hover:text-red" />
-			</button>
-		</div>
+		<tr className="border-b border-grayTwo">
+			<td className="py-3">{unidad}</td>
+			<td className="py-3 px-2">
+				<img className="w-20 h-28 mx-auto" src={img} alt={name} />
+			</td>
+			<td className="py-3">{name}</td>
+			<td className="py-3">${price}</td>
+			<td className="py-3 text-center">
+				<button onClick={() => dispatch({ type: "REMOVE_CART", payload: id })}>
+					<IoMdClose className="w-7 h-7 hover:text-red" />
+				</button>
+			</td>
+		</tr>
 	);
 };
 

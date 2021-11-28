@@ -1,7 +1,7 @@
 import React from "react";
 
 //Components
-import Nabar from "../../components/Nabar";
+import Nabar from "../../components/Custom/Nabar/Nabar";
 
 const Home = () => {
 	return (
