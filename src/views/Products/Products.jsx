@@ -29,7 +29,7 @@ const Products = () => {
 	return (
 		<>
 			<Nabar />
-			<div className="box-products pt-40 grid grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-7 justify-items-center mx-auto">
+			<div className="box-products pt-40 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-7 justify-items-center mx-auto">
 				{state?.list?.length > 0 &&
 					state.list.map((product) => (
 						<SingleProduct
