@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router";
 
 //Components
-import Nabar from "../../components/Custom/Nabar/Nabar";
+import Navbar from "../../components/Custom/Navbar/Navbar";
 import Loader from "../../components/Custom/Loader/Loader";
 
 //Context
@@ -38,7 +38,7 @@ const ProductDetails = () => {
 
 	return (
 		<>
-			<Nabar />
+			<Navbar />
 			{product?.id ? (
 				<div className="md:flex pt-40 container max-w-max mx-auto">
 					<div>

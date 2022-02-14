@@ -38,7 +38,7 @@ module.exports = {
 			green: "#29c747",
 			greenTwo: "#04891B",
 			blue: "#19B1FF",
-			gray: "#F8F8F8",
+			gray: "#F3F3F3",
 			grayTwo: "#D1D5DB",
 			grayThree: "#8a8a8a",
 			red: "#DC3545",
@@ -49,6 +49,7 @@ module.exports = {
 			white: "#ffffff",
 			blue: "#19B1FF",
 			red: "#FE5F5A",
+			gray: "#B3B3B3",
 		},
 		// fill: (theme) => ({
 		// 	red: theme("#19B1FF"),

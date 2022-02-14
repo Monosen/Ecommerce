@@ -4,7 +4,7 @@ import React, { useContext } from "react";
 import StoreContext from "../../context/StoreContext";
 
 //Components
-import Nabar from "../../components/Custom/Nabar/Nabar";
+import Navbar from "../../components/Custom/Navbar/Navbar";
 import SingleProductCard from "../../components/ProductDetails/SingleProductCard";
 
 //Styles
@@ -14,7 +14,7 @@ const Checkout = () => {
 	const { state } = useContext(StoreContext);
 	return (
 		<>
-			<Nabar />
+			<Navbar />
 			<h1 className="text-4xl font-semibold text-center mt-40 mb-7">
 				Checkout
 			</h1>

@@ -12,12 +12,14 @@ const SingleProduct = ({ img, name, code, category }) => {
 				<p>
 					category: <span>{category}</span>
 				</p>
-				<Link
-					className="my-2 py-3 px-3 bg-blue inline-block text-white rounded hover:text-blue hover:bg-white hover:border-blue border"
-					to={`/products/${code}`}
-				>
-					More Information
-				</Link>
+				<div className="text-center">
+					<Link
+						className="my-2 py-3 px-3 bg-blue inline-block text-white rounded hover:text-blue hover:bg-white hover:border-blue border"
+						to={`/products/${code}`}
+					>
+						More Information
+					</Link>
+				</div>
 			</div>
 		</div>
 	);
