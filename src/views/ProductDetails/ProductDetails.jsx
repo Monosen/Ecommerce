@@ -40,7 +40,7 @@ const ProductDetails = () => {
 		<>
 			<Navbar />
 			{product?.id ? (
-				<div className="md:flex pt-40 container max-w-max mx-auto">
+				<div className="container pt-40 mx-auto md:flex max-w-max">
 					<div>
 						{product && (
 							<img
@@ -51,100 +51,104 @@ const ProductDetails = () => {
 						)}
 					</div>
 					<div className="pl-5">
-						<h1 className="text-3xl capitalize font-semibold mb-3">
+						<h1 className="mb-3 text-3xl font-semibold capitalize">
 							{product?.title && product.title}
 						</h1>
 						<p className="mb-3">
 							<strong>Color: </strong> <span>black</span>
 						</p>
 						<div className="mb-8">
-							<div className="bg-black w-5 h-5 rounded-full"></div>
+							<div className="w-5 h-5 bg-black rounded-full"></div>
 						</div>
-						<div className="flex items-center mb-3">
-							<p className="font-semibold">Fit</p>
-							<div
-								id="gender"
-								className="flex text-center ml-7 w-full text-blue"
-							>
-								<label className="m-1 px-2 py-5 border border-grayTwo cursor-pointer w-6/12 relative rounded">
-									<input className="hidden" type="radio" name="genero" />
-									<span className="absolute inset-0 flex justify-center items-center">
-										Male Fit
-									</span>
-								</label>
-								<label className="m-1 px-2 py-2 border border-grayTwo cursor-pointer w-6/12 relative rounded">
-									<input className="hidden" type="radio" name="genero" />
-									<span className="absolute inset-0 flex justify-center items-center">
-										Female Fit
-									</span>
-								</label>
+						{!product.category.includes("electronics") && (
+							<div className="flex items-center mb-3">
+								<p className="font-semibold">Fit</p>
+								<div
+									id="gender"
+									className="flex w-full text-center ml-7 text-blue"
+								>
+									<label className="relative w-6/12 px-2 py-5 m-1 border rounded cursor-pointer border-grayTwo">
+										<input className="hidden" type="radio" name="genero" />
+										<span className="absolute inset-0 flex items-center justify-center">
+											Male Fit
+										</span>
+									</label>
+									<label className="relative w-6/12 px-2 py-2 m-1 border rounded cursor-pointer border-grayTwo">
+										<input className="hidden" type="radio" name="genero" />
+										<span className="absolute inset-0 flex items-center justify-center">
+											Female Fit
+										</span>
+									</label>
+								</div>
 							</div>
-						</div>
-						<div className="flex items-center mb-10 ">
-							<p className="font-semibold">Size</p>
-							<div
-								id="size"
-								className="grid grid-cols-4 text-center ml-5 gap-2 w-full text-blue"
-							>
-								<label className="m-1 px-4 py-4 border border-grayTwo cursor-pointer rounded relative z-0">
-									<input className="hidden" type="radio" name="size" />
-									<span className="absolute inset-0 flex justify-center items-center">
-										S
-									</span>
-								</label>
-								<label className="m-1 px-4 py-4 border border-grayTwo cursor-pointer rounded relative z-0">
-									<input className="hidden" type="radio" name="size" />
-									<span className="absolute inset-0 flex justify-center items-center">
-										M
-									</span>
-								</label>
-								<label className="m-1 px-4 py-4 border border-grayTwo cursor-pointer rounded relative z-0 ">
-									<input className="hidden" type="radio" name="size" />
-									<span className="absolute inset-0 flex justify-center items-center">
-										L
-									</span>
-								</label>
-								<label className="m-1 px-4 py-4 border border-grayTwo cursor-pointer rounded relative z-0">
-									<input className="hidden" type="radio" name="size" />
-									<span className="absolute inset-0 flex justify-center items-center">
-										XL
-									</span>
-								</label>
-								<label className="m-1 px-4 py-4 border border-grayTwo cursor-pointer rounded relative z-0">
-									<input className="hidden" type="radio" name="size" />
-									<span className="absolute inset-0 flex justify-center items-center">
-										2XL
-									</span>
-								</label>
-								<label className="m-1 px-4 py-4 border border-grayTwo cursor-pointer rounded relative z-0">
-									<input className="hidden" type="radio" name="size" />
-									<span className="absolute inset-0 flex justify-center items-center">
-										3XL
-									</span>
-								</label>
-								<label className="m-1 px-4 py-4 border border-grayTwo cursor-pointer rounded relative z-0">
-									<input className="hidden" type="radio" name="size" />
-									<span className="absolute inset-0 flex justify-center items-center">
-										4XL
-									</span>
-								</label>
-								<label className="m-1 px-4 py-4 border border-grayTwo cursor-pointer rounded relative z-0">
-									<input className="hidden" type="radio" name="size" />
-									<span className="absolute inset-0 flex justify-center items-center">
-										5XL
-									</span>
-								</label>
+						)}
+						{product.category.includes("men") && (
+							<div className="flex items-center mb-10 ">
+								<p className="font-semibold">Size</p>
+								<div
+									id="size"
+									className="grid w-full grid-cols-4 gap-2 ml-5 text-center text-blue"
+								>
+									<label className="relative z-0 px-4 py-4 m-1 border rounded cursor-pointer border-grayTwo">
+										<input className="hidden" type="radio" name="size" />
+										<span className="absolute inset-0 flex items-center justify-center">
+											S
+										</span>
+									</label>
+									<label className="relative z-0 px-4 py-4 m-1 border rounded cursor-pointer border-grayTwo">
+										<input className="hidden" type="radio" name="size" />
+										<span className="absolute inset-0 flex items-center justify-center">
+											M
+										</span>
+									</label>
+									<label className="relative z-0 px-4 py-4 m-1 border rounded cursor-pointer border-grayTwo ">
+										<input className="hidden" type="radio" name="size" />
+										<span className="absolute inset-0 flex items-center justify-center">
+											L
+										</span>
+									</label>
+									<label className="relative z-0 px-4 py-4 m-1 border rounded cursor-pointer border-grayTwo">
+										<input className="hidden" type="radio" name="size" />
+										<span className="absolute inset-0 flex items-center justify-center">
+											XL
+										</span>
+									</label>
+									<label className="relative z-0 px-4 py-4 m-1 border rounded cursor-pointer border-grayTwo">
+										<input className="hidden" type="radio" name="size" />
+										<span className="absolute inset-0 flex items-center justify-center">
+											2XL
+										</span>
+									</label>
+									<label className="relative z-0 px-4 py-4 m-1 border rounded cursor-pointer border-grayTwo">
+										<input className="hidden" type="radio" name="size" />
+										<span className="absolute inset-0 flex items-center justify-center">
+											3XL
+										</span>
+									</label>
+									<label className="relative z-0 px-4 py-4 m-1 border rounded cursor-pointer border-grayTwo">
+										<input className="hidden" type="radio" name="size" />
+										<span className="absolute inset-0 flex items-center justify-center">
+											4XL
+										</span>
+									</label>
+									<label className="relative z-0 px-4 py-4 m-1 border rounded cursor-pointer border-grayTwo">
+										<input className="hidden" type="radio" name="size" />
+										<span className="absolute inset-0 flex items-center justify-center">
+											5XL
+										</span>
+									</label>
+								</div>
 							</div>
-						</div>
+						)}
 						<div className="mb-3 text-green">
 							{product && (
-								<span className="text-3xl block">${product.price}</span>
+								<span className="block text-3xl">${product.price}</span>
 							)}
 							<small>incl. VAT</small>
 						</div>
 						<button
 							onClick={() => handleAddCart("ADD_CART", product)}
-							className="uppercase w-full h-16 hover:bg-greenTwo rounded bg-green text-white text-2xl font-bold mb-4"
+							className="w-full h-16 mb-4 text-2xl font-bold text-white uppercase rounded hover:bg-greenTwo bg-green"
 						>
 							add to cart
 						</button>
@@ -152,14 +156,14 @@ const ProductDetails = () => {
 				</div>
 			) : (
 				product === null && (
-					<div className="w-screen h-screen flex justify-center items-center flex-col">
-						<h1 className="text-9xl mb-2">404</h1>
+					<div className="flex flex-col items-center justify-center w-screen h-screen">
+						<h1 className="mb-2 text-9xl">404</h1>
 						<h2 className="text-4xl">Not Found</h2>
 					</div>
 				)
 			)}
 			{loader && (
-				<div className="w-screen h-screen flex justify-center items-center">
+				<div className="flex items-center justify-center w-screen h-screen">
 					<Loader />
 				</div>
 			)}

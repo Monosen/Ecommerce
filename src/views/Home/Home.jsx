@@ -24,9 +24,9 @@ const Home = () => {
 				const response = await fetch("https://fakestoreapi.com/products");
 				const result = await response.json();
 				dispatch({ type: "ADD_ALL_PRODUCTS", payload: result });
+
 				const res = await fetch("https://fakestoreapi.com/products/categories");
 				const resul = await res.json();
-				console.log("hola");
 				resul.forEach((name) => {
 					setNameFilter((prevState) => [...prevState, name]);
 				});
@@ -35,6 +35,9 @@ const Home = () => {
 			}
 		};
 		handleFetchData();
+		return () => {
+			setNameFilter([]);
+		};
 	}, [dispatch]);
 
 	return (
@@ -57,7 +60,7 @@ const Home = () => {
 				</div>
 			</div>
 
-			<div className="container mx-auto mt-7">
+			<div className="container mx-auto mb-4 mt-7">
 				{nameFilter?.map((category, index) => (
 					<NavbarFilter key={index} name={category} setCategory={setCategory} />
 				))}
@@ -73,9 +76,7 @@ const Home = () => {
 									code={product.id}
 									category={product.category}
 								/>
-							) : (
-								<di className="hidden">not products</di>
-							)
+							) : null
 						)}
 				</div>
 			</div>
